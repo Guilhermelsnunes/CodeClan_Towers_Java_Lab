@@ -26,8 +26,18 @@ public abstract class Room {
         this.guestList.clear();
     }
 
-    public void removeGuest(String name){
-        int index = this.guestList.indexOf(name);
+    public void removeGuest(Guest guest){
+        int index = this.guestList.indexOf(guest);
         this.guestList.remove(index);       
+    }
+
+    public void addGuest(Guest guest){
+        this.guestList.add(guest);
+    }
+
+    public void getNames(){
+        for (Guest guest : guestList){
+            System.out.println(guest.getName());
+        }
     }
 }
